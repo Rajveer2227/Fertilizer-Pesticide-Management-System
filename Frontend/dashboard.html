@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    .content 
+    {
+        margin-top: 50px; /* Adjust based on your sidebar width */
+        padding: 20px;
+    }
+    /* Dashboard header styles */
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .dashboard-header h1 
+    {
+        text-align: center;
+        font-size: 40px;
+        text-shadow: 0.4rem  0.3rem  0px rgba(0, 0, 0, .2);
+        letter-spacing: 0.2rem;
+    }
+    .dashboard-header h1 span
+    {
+        color:  #093b31;
+    }
+    
+    .date-time 
+    {
+        font-size: 25px;
+        color:  #FFBA00;
+    
+    }
+    
+    /* Widgets styles */
+    .widgets 
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 20px;
+    }
+    
+    .widget {
+        background-color: #e9ecef;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+    }
+    
+    .widget i {
+        font-size: 32px;
+        margin-right: 15px;
+    }
+    
+    .widget-info h2 {
+        margin: 0;
+    }
+    
+    .widget-info p {
+        margin: 5px 0 0;
+        font-size: 18px;
+    }
+    
+    /* Additional info styles */
+    .additional-info {
+        margin-top: 50px;
+    }
+    
+    .additional-info .widget {
+        background-color: #e9ecef;
+        color: #333;
+    }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="content" id="dashboardContent">
+        <div class="widgets">
+            <div class="widget">
+                <i class="fas fa-cubes"></i>
+                <div class="widget-info">
+                    <h2>Total Products</h2>
+                    <h2 class="mb-0">{{ product_total }}</h2>
+                </div>
+            </div>
+            <div class="widget">
+                <i class="fas fa-user"></i>
+                <div class="widget-info">
+                    <h2>Total Suppliers</h2>
+                    <h2 class="mb-0">{{ supplier_total }}</h2>
+                </div>
+            </div>
+            <div class="widget">
+                <i class="fas fa-shopping-basket"></i>
+                <div class="widget-info">
+                    <h2>Total Purchase</h2>
+                    <h2 class="mb-0">{{ purchase_total }}</h2>
+                </div>
+            </div>
+            <div class="widget">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="widget-info">
+                    <h2>Total Sale</h2>
+                    <h2 class="mb-0">{{ sale_total }}</h2>
+                </div>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
